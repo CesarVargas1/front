@@ -1,0 +1,71 @@
+<!-- enlaza el front con el back de bd mongo-->
+<br>
+<input type="search" (keyup)="search($event)" class="form-control" placeholder="Buscar por nombre">
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Número de Juego </th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Posición</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Localidad</th>
+            <th scope="col">Equipo</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of listContact; let i = index">
+            <td scope="row">
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status">{{ item.name }}</span>
+                <input *ngIf="item.status" (keyup)="change(item,$event, i, 'name')" class="form-control" value="{{item.name}}">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.numJugador }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.numJugador}}" (keyup)="change(item,$event, i, 'numJugador')">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.nacionalidad }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.nacionalidad}}" (keyup)="change(item,$event, i, 'nacionalidad')">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.altura }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.altura}}" (keyup)="change(item,$event, i, 'altura')">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.posicion }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.posicion}}" (keyup)="change(item,$event, i, 'posicion')">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.fechaNacimiento }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.fechaNacimiento}}" (keyup)="change(item,$event, i, 'fechaNacimiento')">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.localia }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.localia}}" (keyup)="change(item,$event, i, 'localia')">
+            </td>
+            <td>
+                <span class="pointer" (click)="findById(item._id)" *ngIf="!item.status"> {{ item.equipos }}</span>
+                <input *ngIf="item.status" class="form-control" value="{{item.equipos}}" (keyup)="change(item,$event, i, 'equipos')">
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="edit(item)">
+            <span *ngIf="!item.status">
+              {{ item.textAction }}
+            </span>
+            <span *ngIf="item.status">
+              {{ item.textAction }}
+            </span>
+          </button>
+            </td>
+            <!--
+            <td><button *ngIf="item.status" class="btn btn-secondary" (click)="reset(i)">Cancelar</button> </td>
+           -->
+            <td><button class="btn btn-danger" (click)="delete(item._id)">Eliminar</button> </td>
+
+        </tr>
+    </tbody>
+</table>

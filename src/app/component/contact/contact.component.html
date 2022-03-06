@@ -1,0 +1,100 @@
+<!-- Contact Section Start -->
+<section id="contact" class="section-padding bg-gray">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Registre Datos de los Jugadores</h2>
+            <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+        </div>
+        <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="contact-block">
+                    <!-- [formGroup] se une la funcion con los parametros de contact.component -->
+                    <form [formGroup]="form" id="contactForm">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>EQUIPO VISITANTE Y LOCAL</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" formControlName="name" class="form-control" placeholder="Nombre y Apellido">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" formControlName="numJugador" placeholder="Número de Juego" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group">
+                                    <input type="text" formControlName="nacionalidad" class="form-control" placeholder="Nacionalidad">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" formControlName="altura" class="form-control" placeholder="Altura en Centimetros">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Posición de Juego</label>
+                                    <select formControlName="posicion" class="form-control">
+                                        <option value="delantero">Delantero</option>
+                                        <option value="volante"> Volante</option>
+                                        <option value="defensa">Defensa</option>
+                                        <option value="arquero">Arquero</option>
+                                        <option value="técnico">Técnico</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="fecha de Nacimiento">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Localidad del Equipo</label>
+                                    <select formControlName="localia" class="form-control">
+                                        <option value="local">Local</option>
+                                        <option value="visitante"> Visitante</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Elija el equipo</label>
+                                    <select formControlName="equipos" class="form-control">
+                                        <option value="barcelona">Barcelona</option>
+                                        <option value="america">America</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="submit-button text-left">
+                                    <button (click)="sendMessage()" class="btn btn-common" id="form-submit" type="submit">Enviar</button>
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="clearfix "></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-xs-12 ">
+                <div class="map ">
+                </div>
+                <!--<div class="map ">
+                    <object style="border:0; height: 280px; width: 100%; " data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584 "></object>
+                </div> -->
+            </div>
+        </div>
+        <br>
+        <app-amd-contact></app-amd-contact>
+    </div>
+</section>
+<!-- Contact Section End -->

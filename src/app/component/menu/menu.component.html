@@ -1,0 +1,39 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a href="index.html" class="navbar-brand"><img src="" alt="">GanApuestas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="lni-menu"></i>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+                <li class="nav-item" *ngFor="let item of config.menuComponent">
+                    <a class=" nav-link active" href=" {{ item.url }} ">{{ item.nombre }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End 
+se elimina todo esto
+  <li class="nav-item active ">
+                    <a class="nav-link " href="#hero-area ">{{config.menuComponent.home}}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#services ">{{config.menuComponent.services}}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#team ">{{config.menuComponent.team}}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#pricing ">{{config.menuComponent.pricing}}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#testimonial ">{{config.menuComponent.testimonial}}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#contact ">{{config.menuComponent.contact}}</a>
+                </li>
+
+-->
